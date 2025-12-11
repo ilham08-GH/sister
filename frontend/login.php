@@ -12,15 +12,15 @@ if (isset($_SESSION['user'])) {
     exit;
 }
 
-// Menyiapkan pesan berdasarkan parameter GET dari URL
+// Menyiapkan pesan berdasarkan parameter POST dari URL
 $message = '';
 $message_type = ''; // 'message-success' atau 'message-error'
 
-if (isset($_GET['error']) && $_GET['error'] === 'login_failed') {
+if (isset($_POST['error']) && $_POST['error'] === 'login_failed') {
     $message = "Username atau password salah.";
     $message_type = 'message-error';
 }
-if (isset($_GET['status']) && $_GET['status'] === 'reg_success') {
+if (isset($_POST['status']) && $_POST['status'] === 'reg_success') {
     $message = "Registrasi berhasil! Silakan login dengan akun baru Anda.";
     $message_type = 'message-success';
 }

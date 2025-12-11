@@ -1,38 +1,146 @@
-.App {
-  text-align: center;
+/* --- Global Styling & Layout Dasar --- */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f7f9;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app-container {
+    padding: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* --- Tata Letak Kasir (Flexbox) --- */
+
+.cashier-layout {
+    display: flex;
+    gap: 20px; /* Jarak antara panel produk dan keranjang */
+    min-height: 80vh;
 }
 
-.App-link {
-  color: #61dafb;
+/* Panel Samping Kiri: Daftar Produk */
+.product-list-panel {
+    flex: 2; /* Mengambil 2/3 ruang */
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Panel Samping Kanan: Keranjang */
+.cart-panel {
+    flex: 1; /* Mengambil 1/3 ruang */
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex; /* Untuk menempatkan Total dan Tombol di bawah */
+    flex-direction: column;
 }
+
+/* --- Styling Daftar Produk --- */
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.2s;
+    background-color: #fff;
+}
+
+.product-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.product-card h4 {
+    margin-top: 0;
+    color: #333;
+}
+
+.product-card button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+    transition: background-color 0.2s;
+}
+
+.product-card button:hover {
+    background-color: #1e7e34;
+}
+
+/* --- Styling Keranjang --- */
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.cart-table th, .cart-table td {
+    border-bottom: 1px solid #eee;
+    padding: 8px 0;
+    text-align: left;
+}
+
+.cart-table th {
+    background-color: #f8f9fa;
+}
+
+/* Ringkasan Total */
+.total-summary {
+    margin-top: auto; /* Mendorong ke bawah */
+    border-top: 2px solid #333;
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total-amount {
+    color: #dc3545;
+}
+
+/* Tombol Checkout */
+.checkout-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 15px 0;
+    font-size: 1.1em;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+}
+
+.checkout-button:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+.checkout-button:disabled {
+    background-color: #adb5bd;
+    cursor: not-allowed;
+} 
