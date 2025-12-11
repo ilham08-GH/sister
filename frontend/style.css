@@ -1,0 +1,240 @@
+/* =================================
+   GAYA GLOBAL & TIPOGRAFI
+   ================================= */
+:root {
+    --biru-utama: #007bff;
+    --biru-gelap: #0056b3;
+    --biru-terang: #f0f7ff;
+    --biru-border: #e0eafc;
+    --hijau-sukses: #2ecc71;
+    --oranye-tunggu: #f39c12;
+    --merah-logout: #dc3545;
+    --teks-utama: #343a40;
+    --teks-sekunder: #6c757d;
+    --putih: #ffffff;
+    --abu-abu-terang: #f8f9fa;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--abu-abu-terang);
+    color: var(--teks-utama);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main {
+    width: 100%;
+    max-width: 700px;
+}
+
+h1, h2 {
+    color: var(--biru-gelap);
+}
+
+hr {
+    border: none;
+    border-top: 1px solid var(--biru-border);
+    margin: 30px 0;
+}
+
+/* =================================
+   HEADER & INFO PENGGUNA
+   ================================= */
+header {
+    text-align: center;
+    width: 100%;
+    max-width: 700px;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    margin-bottom: 5px;
+    font-size: 2.5rem;
+}
+
+.user-info {
+    margin: 15px 0 25px 0;
+    padding: 10px 15px;
+    background-color: var(--biru-border);
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.user-info span {
+    font-weight: 500;
+    color: var(--biru-gelap);
+}
+
+.logout-btn {
+    padding: 8px 15px;
+    background-color: var(--merah-logout);
+    color: var(--putih);
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+}
+
+.logout-btn:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* =================================
+   FORM & LOGIN
+   ================================= */
+.form-container, .login-container {
+    background-color: var(--putih);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 86, 179, 0.08);
+    margin-bottom: 30px;
+    margin: 20px auto 0 auto; /* 20px atas, auto kanan, 0 bawah, auto kiri */
+
+}
+
+.login-container {
+    max-width: 400px;
+    margin-top: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+input, textarea, select {
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--biru-utama);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+button[type="submit"] {
+    border: none;
+    padding: 14px;
+    font-size: 1.1rem;
+    background-color: var(--biru-utama);
+    color: var(--putih);
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--biru-gelap);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+#message-container { margin-top: 15px; padding: 12px; border-radius: 8px; text-align: center; font-weight: bold; display: none; }
+.message-error { background-color: #f8d7da; color: #721c24; display: block; }
+.message-success { background-color: #d4edda; color: #155724; display: block; }
+
+/* =================================
+   DAFTAR JANJI TEMU
+   ================================= */
+.appointment-card {
+    background: var(--putih);
+    border: 1px solid var(--biru-border);
+    border-left-width: 5px;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 15px;
+    transition: box-shadow 0.2s;
+}
+
+.appointment-card:hover {
+    box-shadow: 0 6px 20px rgba(0, 86, 179, 0.08);
+}
+
+.card-menunggu { border-left-color: var(--oranye-tunggu); }
+.card-dikonfirmasi { border-left-color: var(--hijau-sukses); }
+
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.card-header h3 { margin: 0; }
+.status { padding: 4px 10px; border-radius: 12px; font-size: 0.8rem; font-weight: bold; color: white; }
+.status-menunggu { background-color: var(--oranye-tunggu); }
+.status-dikonfirmasi { background-color: var(--hijau-sukses); }
+
+.card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; }
+.card-footer small { color: var(--teks-sekunder); }
+
+.konfirmasi-btn {
+    padding: 6px 12px;
+    background-color: #3498db;
+    color: var(--putih);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: background-color 0.2s;
+}
+
+.konfirmasi-btn:hover { background-color: #2980b9; }
+
+/* ... (kode CSS lama) ... */
+
+/* Style untuk link registrasi */
+.register-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+.register-link a {
+    color: var(--biru-utama);
+    font-weight: bold;
+    text-decoration: none;
+}
+.register-link a:hover {
+    text-decoration: underline;
+}
+/* ... CSS lama ... */
+.user-table { width: 100%; border-collapse: collapse; }
+.user-table th, .user-table td { border: 1px solid var(--biru-border); padding: 10px; text-align: left; }
+.user-table th { background-color: var(--biru-terang); }
+.delete-btn { background-color: var(--merah-logout); color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; }
+.delete-btn:hover { background-color: #c82333; }
+#admin-message { margin-top: 15px; }
+/* ... CSS lama ... */
+
+.action-buttons button {
+    margin-right: 5px;
+}
+
+.edit-btn {
+    background-color: #ffc107; /* Warna kuning untuk edit */
+    color: #212529;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.edit-btn:hover {
+    background-color: #e0a800;
+}
+
+/* Style untuk tombol yang tidak aktif */
+.edit-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
